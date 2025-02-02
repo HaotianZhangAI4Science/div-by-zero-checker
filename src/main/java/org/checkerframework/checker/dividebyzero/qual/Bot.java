@@ -2,13 +2,11 @@ package org.checkerframework.checker.dividebyzero.qual;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
-import org.checkerframework.framework.qual.DefaultQualifierInHierarchy;
 import org.checkerframework.framework.qual.SubtypeOf;
 
 /**
- * Top is the top element in our lattice (representing the "MaybeZero" state).
+ * Bot: The bottom element of the lattice.
  */
-@DefaultQualifierInHierarchy
-@SubtypeOf({})
+@SubtypeOf({Zero.class, NonZero.class})
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
-public @interface Top {}
+public @interface Bot {}
